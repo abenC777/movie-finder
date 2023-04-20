@@ -60,7 +60,13 @@ function App() {
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </header>
 
-      <main>{loading ? <p>Loading...</p> : <Movies movies={movies} />}</main>
+      <main>
+        {loading ? (
+          <p>Loading...</p>
+        ) : search ? (
+          <Movies movies={movies} />
+        ) : null}
+      </main>
     </div>
   )
 }
